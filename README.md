@@ -7,7 +7,7 @@ Environment: [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-
 ## The Environment
 
  
-**Before Training:** *Reward: 0.0, 0.0, 0.0, 0.1, 0.1*
+**Before Training:** *Reward: 0.0, 0.0, 0.0, 0.1, 0.0*
 ![Before Training ](/assets/before-training.gif "Before-training")
 
 **After Training:** *Reward: +2.6*
