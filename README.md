@@ -6,13 +6,12 @@ Environment: [Unity ML-Agents Toolkit](https://github.com/Unity-Technologies/ml-
 
 ## The Environment
 
-<!--- 
-**Before Training:** *Reward: 0.0*
+ 
+**Before Training:** *Reward: 0.0, 0.0, 0.0, 0.1, 0.1*
 ![Before Training ](/assets/before-training.gif "Before-training")
 
-**After Training:** *Reward: +39.25*
+**After Training:** *Reward: +2.6*
 ![After Training ](/assets/after-training.gif "After-training")
---->
 
 ### Actions
 Actions are in the form of a continuous vector space of size 2, corresponding to horizontal and vertical movement. 
