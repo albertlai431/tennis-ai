@@ -6,7 +6,7 @@ The **DDPG (Deep Deterministic Policy Gradient)** algorithm is based on **Deep Q
 
 DDPG algorithm is a (self-proclaimed) actor-critic method. It has 4 networks; an actor network, a critic network, and fixed target networks for both of them. The actor network takes a state as input and outputs the believed best action deterministaically. The critic takes both the state and action as input and outputs the Q-value for that state-action pair. Similarly to DQNs, the loss is calculated between the predicted reward at the current state and of the next state, which is then used to backpropagate through both networks to allow them to learn. The soft update used to update the fixed networks is slightly different than that of Deep Q-learning, it updates only a small percentage of the fixed network at a time (0.1%) to allow the learning to be more stable. 
 
-To adapt DDPG to a multi-agent problem, the same Agent is simply used for all the agents and learns from all the experiences. 
+DDPG was chosen due to its ability to perform well for tasks with continuous action states! It is a direct extension of Deep Q Learning, which has proven to be exceptional for multiple reinforcement learning tasks. A replay buffer was used and shared among both agents. To incite exploration, generated OU (Ornstein–Uhlenbeck) noise was added to the actions of each agent. 
 
 ### Implementation
 
@@ -31,6 +31,8 @@ To adapt DDPG to a multi-agent problem, the same Agent is simply used for all th
       - Update target networks after a certain number of updates
 
 ### Hyperparameters
+These hyperparameters were mostly adopted from the DDPG paper. UPDATE_EVERY and UPDATE_TIMES were a result of experimentation as they proved to faciliate the quickest and most stable learning. 
+
 ```python
 BUFFER_SIZE = int(1e6)  # replay buffer size
 BATCH_SIZE = 128        # minibatch size
@@ -44,6 +46,8 @@ UPDATE_TIMES = 20       # how many times to update the network
 ``` 
 
 ### Deep Q-Network Architecture
+The architecture was chosen through deliberation and experimentation. The hidden layers of size 128 for both the actor and critic seemed to work best. Smaller sized layers may have been able to learn quicker but might not be as accurte, while larger layers may be prone to overfitting. 
+
 #### Actor
 1. **Fully Connected**: 33 → 128 (Input layer)
 2. **RELU** (Activation)
