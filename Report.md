@@ -57,7 +57,7 @@ The architecture was chosen through deliberation and experimentation. The hidden
 6. **Fully Connected**: 128 → 4 (Output layer)
 7. **Tanh** (Activation)
 
-## Critic
+#### Critic
 1. **Fully Connected**: 33 → 128 (Input layer)
 2. **RELU** (Activation)
 3. **Batchnorm** (Normalization)
